@@ -1,0 +1,36 @@
+services:
+
+  mariadb:
+    build: ./mariadb
+    restart: "no" # Ne pas redémarrer automatiquement le conteneur
+    ports:
+      - 3306:3306 
+    volumes:
+      - mariadb:/var/lib/mysql # Le répertoire ./datadb est monté pour persister les données de la base de données
+    environment:
+      MYSQL_ROOT_PASSWORD: super # Mot de passe pour l'utilisateur root
+      MYSQL_DATABASE: instacfpt # Base de données initiale qui sera créée à la première exécution
+    networks:
+      - public
+      
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin # Image Docker officielle de phpMyAdmin
+    restart: "no" # Ne pas redémarrer automatiquement le conteneur
+    ports:
+      - 8100:80  # Le port 8081 de l'hôte est mappé au port 80 du conteneur phpMyAdmin
+    environment:
+      PMA_HOST: mariadb  # Nom du service MariaDB auquel se connecter
+      PMA_PORT: 3306     # Port utilisé par MariaDB
+      PMA_USER: root     # Utilisateur root pour la connexion
+      PMA_PASSWORD: super  # Mot de passe pour l'utilisateur root
+    depends_on: # Dépendance du service phpMyAdmin envers le service MariaDB
+      - mariadb
+    networks:
+      - public
+
+
+volumes:
+  mariadb:
+
+networks:
+  public:
