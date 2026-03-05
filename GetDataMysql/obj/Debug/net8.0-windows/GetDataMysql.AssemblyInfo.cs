@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GetDataMysql")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+228c8ceb946fdd853d7a01b8cbc0e356f7049ed3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c1293f1f460623030ff71c177255fbd14a5159b2")]
 [assembly: System.Reflection.AssemblyProductAttribute("GetDataMysql")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GetDataMysql")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -9,7 +9,7 @@ services:
       - mariadb:/var/lib/mysql # Le répertoire ./datadb est monté pour persister les données de la base de données
     environment:
       MYSQL_ROOT_PASSWORD: super # Mot de passe pour l'utilisateur root
-      MYSQL_DATABASE: instacfpt # Base de données initiale qui sera créée à la première exécution
+      MYSQL_DATABASE: Eleves # Base de données initiale qui sera créée à la première exécution
     networks:
       - public
       
