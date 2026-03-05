@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.3
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : mariadb:3306
--- Généré le : dim. 29 sep. 2024 à 12:14
--- Version du serveur : 11.5.2-MariaDB-ubu2404
--- Version de PHP : 8.2.8
+-- Généré le : jeu. 05 mars 2026 à 08:20
+-- Version du serveur : 12.2.2-MariaDB-ubu2404
+-- Version de PHP : 8.3.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,31 +18,29 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `instacfpt`
+-- Base de données : `Eleves`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `posts`
+-- Structure de la table `Eleves`
 --
 
-CREATE TABLE `posts` (
-  `id` int(11) NOT NULL,
-  `uniqid` VARCHAR(50) NOT NULL,
-  `title` varchar(100) NOT NULL,
-  `image` varchar(200) NOT NULL,
-  `date` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE `Eleves` (
+  `id` int(4) UNSIGNED NOT NULL,
+  `nom` varchar(20) NOT NULL,
+  `prenom` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 
 --
 -- Index pour les tables déchargées
 --
 
 --
--- Index pour la table `posts`
+-- Index pour la table `Eleves`
 --
-ALTER TABLE `posts`
+ALTER TABLE `Eleves`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -50,10 +48,10 @@ ALTER TABLE `posts`
 --
 
 --
--- AUTO_INCREMENT pour la table `posts`
+-- AUTO_INCREMENT pour la table `Eleves`
 --
-ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `Eleves`
+  MODIFY `id` int(4) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
