@@ -32,66 +32,50 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
             numericUpDown1 = new NumericUpDown();
+            textBox1 = new TextBox();
+            textBox2 = new TextBox();
+            button2 = new Button();
+            button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(50, 62);
+            button1.Location = new Point(57, 156);
             button1.Name = "button1";
-            button1.Size = new Size(75, 23);
+            button1.Size = new Size(120, 23);
             button1.TabIndex = 0;
-            button1.Text = "button1";
+            button1.Text = "Info";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
             // label1
             // 
-            label1.Location = new Point(357, 57);
+            label1.Location = new Point(638, 127);
             label1.Name = "label1";
-            label1.Size = new Size(136, 29);
+            label1.Size = new Size(140, 23);
             label1.TabIndex = 1;
-            label1.Text = "label1";
+            label1.Text = "ID";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
-            label2.Location = new Point(357, 123);
+            label2.Location = new Point(638, 150);
             label2.Name = "label2";
-            label2.Size = new Size(136, 29);
+            label2.Size = new Size(140, 23);
             label2.TabIndex = 2;
-            label2.Text = "label2";
+            label2.Text = "Nom";
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
-            label3.Location = new Point(357, 189);
+            label3.Location = new Point(638, 173);
             label3.Name = "label3";
-            label3.Size = new Size(136, 29);
+            label3.Size = new Size(140, 23);
             label3.TabIndex = 3;
-            label3.Text = "label3";
+            label3.Text = "Prénom";
             label3.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            label4.Location = new Point(357, 255);
-            label4.Name = "label4";
-            label4.Size = new Size(136, 29);
-            label4.TabIndex = 4;
-            label4.Text = "label4";
-            label4.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label5
-            // 
-            label5.Location = new Point(357, 321);
-            label5.Name = "label5";
-            label5.Size = new Size(136, 29);
-            label5.TabIndex = 5;
-            label5.Text = "label5";
-            label5.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // numericUpDown1
             // 
@@ -101,14 +85,52 @@
             numericUpDown1.TabIndex = 6;
             numericUpDown1.ValueChanged += numericUpDown1_ValueChanged;
             // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(444, 150);
+            textBox1.Name = "textBox1";
+            textBox1.PlaceholderText = "Nom";
+            textBox1.Size = new Size(140, 23);
+            textBox1.TabIndex = 7;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(444, 173);
+            textBox2.Name = "textBox2";
+            textBox2.PlaceholderText = "Prénom";
+            textBox2.Size = new Size(140, 23);
+            textBox2.TabIndex = 8;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(444, 202);
+            button2.Name = "button2";
+            button2.Size = new Size(140, 23);
+            button2.TabIndex = 9;
+            button2.Text = "Ajouté";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(444, 231);
+            button3.Name = "button3";
+            button3.Size = new Size(140, 23);
+            button3.TabIndex = 10;
+            button3.Text = "Modifié";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button3);
+            Controls.Add(button2);
+            Controls.Add(textBox2);
+            Controls.Add(textBox1);
             Controls.Add(numericUpDown1);
-            Controls.Add(label5);
-            Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -118,6 +140,7 @@
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -126,8 +149,10 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private Label label4;
-        private Label label5;
         private NumericUpDown numericUpDown1;
+        private TextBox textBox1;
+        private TextBox textBox2;
+        private Button button2;
+        private Button button3;
     }
 }

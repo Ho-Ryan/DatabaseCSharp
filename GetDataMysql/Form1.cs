@@ -20,7 +20,7 @@ namespace GetDataMysql
                 Server = "localhost",
                 UserID = "root",
                 Password = "super",
-                Database = "instacfpt",
+                Database = "Eleves",
             };
 
             ConnectionState();
@@ -33,25 +33,23 @@ namespace GetDataMysql
             await _connection.OpenAsync();
         }
 
-        public async void getData(int postId)
+        public async void GetData(int postId)
         {
             await using var command = _connection.CreateCommand();
-            command.CommandText = @"SELECT * FROM posts WHERE id = @postId;";
+            command.CommandText = @"SELECT * FROM Eleves WHERE id = @postId;";
             command.Parameters.AddWithValue("@postId", postId);
             await using var reader = await command.ExecuteReaderAsync();
             while (reader.Read())
             {
                 var id = reader.GetInt32("id");
                 label1.Text = $"{id}";
-                var uniqid = reader.GetString("uniqid");
-                label2.Text = uniqid;
-                var title = reader.GetString("title");
-                label3.Text = title;
-                var image = reader.GetString("image");
-                label4.Text = image;
-                var date = reader.GetDateTime("date");
-                label5.Text = date.ToString();
+                var nom = reader.GetString("nom");
+                label2.Text = nom;
+                var prenom = reader.GetString("prenom");
+                label3.Text = prenom;
 
+                textBox1.Text = nom;
+                textBox2.Text = prenom;
             }
         }
 
@@ -65,7 +63,40 @@ namespace GetDataMysql
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
             var postId = (int)numericUpDown1.Value;
-            getData(postId);
+            GetData(postId);
+        }
+
+        public async void SetData()
+        {
+            await using var command = _connection.CreateCommand();
+            command.CommandText = @"INSERT INTO Eleves(nom, prenom) VALUE(@nom, @prenom);";
+            command.Parameters.AddWithValue("@nom", textBox1.Text);
+            command.Parameters.AddWithValue("@prenom", textBox2.Text);
+            await using var execute = await command.ExecuteReaderAsync();
+            execute.Read();
+        }
+
+        public async void ModifyData(int postId)
+        {
+            await using var command = _connection.CreateCommand();
+            command.CommandText = @"UPDATE Eleves SET nom = @nom WHERE id = @postId; UPDATE Eleves SET prenom = @prenom WHERE id = @postId;";
+            command.Parameters.AddWithValue("@nom", textBox1.Text);
+            command.Parameters.AddWithValue("@prenom", textBox2.Text);
+            command.Parameters.AddWithValue("@postId", postId);
+
+            await using var execute = await command.ExecuteReaderAsync();
+            execute.Read();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SetData();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int id = (int)numericUpDown1.Value;
+            ModifyData(id);
         }
     }
 }

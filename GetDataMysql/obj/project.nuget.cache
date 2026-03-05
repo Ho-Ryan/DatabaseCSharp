@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/lwbHwcBUoc=",
+  "dgSpecHash": "EN36lZ3mrlg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\Downloads\\database\\GetDataMysql\\GetDataMysql.csproj",
+  "projectFilePath": "C:\\Users\\Admin\\Documents\\2025-2026\\Perso\\database\\GetDataMysql\\GetDataMysql.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.2\\microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.2\\microsoft.extensions.logging.abstractions.8.0.2.nupkg.sha512",
